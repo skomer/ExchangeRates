@@ -30,6 +30,24 @@ class FxRate
     @id = fx_rate['id']
   end
 
+  def self.fx_rate(fx_rate_id)
+    fx_rate_id = fx_rate_id.to_i
+    sql = "
+      SELECT * FROM rates
+      WHERE id = #{fx_rate_id}
+    ;"
+    fx_rate = SqlRunner.run(sql)
+    return FxRate.new(fx_rate.first)
+  end
+
 
 
 end
+
+
+
+
+
+
+
+
