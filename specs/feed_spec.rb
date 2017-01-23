@@ -20,7 +20,7 @@ class TestFxRate < MiniTest::Test
     date_today = Time.now.to_s[0..9]
     feed = Feed.new("http://www.ecb.europa.eu/stats/eurofxref/eurofxref-hist-90d.xml")
     doc = feed.get_data
-    feed_date_today = doc.xpath('//xmlns:Cube')[0].elements[0].attribute('time')
+    feed_date_today = doc.xpath('//xmlns:Cube')[0].elements[0].attribute('time').value
     assert_equal(date_today, feed_date_today)
   end
 

@@ -1,4 +1,5 @@
-
+require 'Nokogiri'
+require 'open-uri'
 
 class Feed
 
@@ -6,6 +7,11 @@ class Feed
 
   def initialize(source)
     @source = source
+  end
+
+  def get_data
+    doc = Nokogiri::XML(open(@source))
+    return doc
   end
 
 
