@@ -4,7 +4,14 @@ require_relative '../models/fx_rate.rb'
 
 class TestFxRate < MiniTest::Test
 
+  def setup
+    options = {
+      ''
 
+
+
+    }
+  end
 
 
 
