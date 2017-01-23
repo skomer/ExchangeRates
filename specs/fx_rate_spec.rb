@@ -17,7 +17,12 @@ class TestFxRate < MiniTest::Test
     assert_equal("DKK", @fx_rate.currency)
   end
 
-
+  def test_can_save_to_database
+    puts @fx_rate.rate
+    @fx_rate.save
+    @test_rate = FxRate.fx_rate(1)
+    assert_equal(6.8922, @test_rate.rate)
+  end
 
 
 
