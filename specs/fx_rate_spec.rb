@@ -46,14 +46,15 @@ class TestFxRate < MiniTest::Test
   end
 
   def test_can_retrieve_record_by_rate_date
+    time = Time.now
     test_rate = FxRate.new({
-      'rate_date' => "2015-09-17",
+      'rate_date' => time,
       'currency' => "CCC",
       'rate' => 1.111
     })
     test_rate.save
     retrieve_rate = FxRate.fx_rate_by_date(test_rate.rate_date)
-    assert_equal(test_rate.rate_date, retrieve_rate.rate)
+    assert_equal(test_rate.rate_date.to_s, retrieve_rate.rate_date)
   end
 
 
