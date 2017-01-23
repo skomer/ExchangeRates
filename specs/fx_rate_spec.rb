@@ -13,6 +13,10 @@ class TestFxRate < MiniTest::Test
     @fx_rate = FxRate.new(options)
   end
 
+  def test_fx_rate_has_currency
+    assert_equal("DKK", @fx_rate.currency)
+  end
+
 
 
 
