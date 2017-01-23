@@ -4,8 +4,8 @@ class Feed
 
   attr_reader :source
 
-  def initialize(options)
-    @source = options.fetch('source')
+  def initialize(source)
+    @source = source
   end
 
 
