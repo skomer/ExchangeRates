@@ -9,6 +9,8 @@ class SqlRunner
         host: 'localhost'
       })
       result = db.exec(sql)
+    rescue
+      result = ["Error: duplicate record not saved"]
     ensure
       db.close
     end

@@ -27,7 +27,12 @@ class FxRate
     RETURNING *
     ;"
     fx_rate = SqlRunner.run(sql).first
-    @id = fx_rate['id']
+    if fx_rate.is_a?(String)
+      return fx_rate
+    else
+      @id = fx_rate['id']
+      return FxRate.new(fx_rate)
+    end
   end
 
   def self.fx_rate(fx_rate_id)
@@ -37,7 +42,7 @@ class FxRate
       WHERE id = #{fx_rate_id}
     ;"
     fx_rate = SqlRunner.run(sql)
-    return FxRate.new(fx_rate.first)
+    return FxRate.new(fx_rate.first)    
   end
 
 

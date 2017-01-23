@@ -1,3 +1,4 @@
+require 'pry-byebug'
 require 'minitest/autorun'
 require 'minitest/pride'
 require_relative '../models/fx_rate.rb'
@@ -19,7 +20,7 @@ class TestFxRate < MiniTest::Test
 
   def test_can_save_to_db_and_retrieve_single_record
     test_rate = FxRate.new({
-      'rate_date' => "2017-01-23",
+      'rate_date' => Time.now,
       'currency' => "AAA",
       'rate' => 9.999
     })
@@ -40,9 +41,9 @@ class TestFxRate < MiniTest::Test
       'rate' => 0.001
     })
     duplicate_rate_1.save
-    assert_equal("Error: duplicate record not saved", duplicate_rate_2.save)
+    actual = duplicate_rate_2.save
+    assert_equal("Error: duplicate record not saved", actual)
   end
-
 
 
 end
