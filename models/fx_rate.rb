@@ -9,7 +9,7 @@ class FxRate
     @id = options['id'].to_i
     @rate_date = options.fetch('rate_date')
     @currency = options.fetch('currency')
-    @rate = options.fetch('rate')
+    @rate = options['rate'].to_f
   end
 
   def save()
@@ -22,7 +22,7 @@ class FxRate
       VALUES (
         '#{@rate_date}',
         '#{@currency}',
-        '#{@rate}'
+        #{@rate}
       )
     RETURNING *
     ;"
