@@ -45,8 +45,6 @@ class FxRate
     return FxRate.new(fx_rate.first)    
   end
 
-
-
 end
 
 

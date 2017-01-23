@@ -18,7 +18,7 @@ class TestFxRate < MiniTest::Test
     assert_equal("DKK", @fx_rate.currency)
   end
 
-  def test_can_save_to_db_and_retrieve_single_record
+  def test_can_save_and_retrieve_record_by_id
     test_rate = FxRate.new({
       'rate_date' => Time.now,
       'currency' => "AAA",
@@ -44,6 +44,19 @@ class TestFxRate < MiniTest::Test
     actual = duplicate_rate_2.save
     assert_equal("Error: duplicate record not saved", actual)
   end
+
+  def test_can_retrieve_record_by_rate_date
+    test_rate = FxRate.new({
+      'rate_date' => "2015-09-17",
+      'currency' => "CCC",
+      'rate' => 1.111
+    })
+    test_rate.save
+    retrieve_rate = FxRate.fx_rate_by_date(test_rate.rate_date)
+    assert_equal(test_rate.rate_date, retrieve_rate.rate)
+  end
+
+
 
 
 end
