@@ -45,10 +45,11 @@ class FxRate
     return FxRate.new(fx_rate.first)    
   end
 
-  def self.fx_rate_by_date(date)
+  def self.fx_rate_by_date_and_currency(date, currency)
     sql = "
       SELECT * FROM rates
       WHERE rate_date = '#{date}'
+      AND currency = '#{currency}'
     ;"
     fx_rate = SqlRunner.run(sql)
     return FxRate.new(fx_rate.first)

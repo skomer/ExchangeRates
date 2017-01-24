@@ -9,7 +9,7 @@ class SqlRunner
         host: 'localhost'
       })
       result = db.exec(sql)
-    rescue
+    rescue PG::UniqueViolation => e
       result = ["Error: duplicate record not saved"]
     ensure
       db.close

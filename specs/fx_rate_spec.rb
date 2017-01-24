@@ -45,7 +45,7 @@ class TestFxRate < MiniTest::Test
     assert_equal("Error: duplicate record not saved", actual)
   end
 
-  def test_can_retrieve_record_by_rate_date
+  def test_can_retrieve_record_by_rate_date_and_currency
     time = Time.now
     test_rate = FxRate.new({
       'rate_date' => time,
@@ -53,7 +53,7 @@ class TestFxRate < MiniTest::Test
       'rate' => 1.111
     })
     test_rate.save
-    retrieve_rate = FxRate.fx_rate_by_date(test_rate.rate_date)
+    retrieve_rate = FxRate.fx_rate_by_date_and_currency(test_rate.rate_date, test_rate.currency)
     assert_equal(test_rate.rate_date.to_s, retrieve_rate.rate_date)
   end
 
