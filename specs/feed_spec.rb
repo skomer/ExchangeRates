@@ -30,7 +30,15 @@ class TestFeed < MiniTest::Test
     assert_equal(1.0715, rates_by_date["2017-01-23"]["USD"].to_f)
   end
 
-
+  def test_can_send_data_to_fx_rates_object
+    @feed.construct_and_save_fx_rates_objects
+    fx_rate = FxRate.fx_rate_by_date("2016-12-27")
+    assert_equal(21.5344, fx_rate.rate)
+  end
 
 
 end
+
+
+
+

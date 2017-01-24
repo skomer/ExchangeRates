@@ -10,8 +10,7 @@ class Feed
   end
 
   def get_data
-    doc = Nokogiri::XML(open(@source))
-    return doc
+    return doc = Nokogiri::XML(open(@source))
   end
 
   def parse_xml
@@ -32,3 +31,6 @@ class Feed
 
 
 end
+
+
+
