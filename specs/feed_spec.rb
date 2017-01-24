@@ -26,8 +26,8 @@ class TestFeed < MiniTest::Test
   end
 
   def test_feed_parses_xml
-    fx_rates_array = @feed.parse_xml
-    assert(fx_rates_array.is_a?(Array))
+    rates_by_date = @feed.parse_xml
+    assert_equal(1.0715, rates_by_date["2017-01-23"]["USD"].to_f)
   end
 
 
