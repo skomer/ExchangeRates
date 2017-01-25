@@ -1,9 +1,10 @@
+require 'date'
 
 
 class ExchangeRate
 
-  def initialize()
-
+  def initialize(options)
+    
 
   end
 
