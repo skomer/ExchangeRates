@@ -18,7 +18,7 @@ class TestFxRate < MiniTest::Test
     assert_equal("DKK", @fx_rate.currency)
   end
 
-  def test_can_save_and_retrieve_record_by_id
+  def test_can_retrieve_record_by_id
     test_rate = FxRate.new({
       'rate_date' => Time.now,
       'currency' => "AAA",
