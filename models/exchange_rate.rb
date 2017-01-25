@@ -3,9 +3,12 @@ require 'date'
 
 class ExchangeRate
 
-  def initialize(options)
-    
+  attr_reader :date_requested, :from_currency, :to_currency
 
+  def initialize(options)
+    @date_requested = options.fetch('date_requested')
+    @from_currency = options.fetch('from_currency')
+    @to_currency = options.fetch('to_currency')
   end
 
   
