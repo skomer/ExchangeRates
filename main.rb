@@ -1,7 +1,7 @@
 require 'sinatra'
 require 'sinatra/contrib/all'
 require 'pry-byebug'
-require_relative 'fx_controller.rb'
+require_relative 'rate_record_controller.rb'
 
 get '/' do
   erb :home

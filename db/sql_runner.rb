@@ -5,7 +5,7 @@ class SqlRunner
   def self.run(sql)
     begin
       db = PG.connect({
-        dbname: 'fx_rates',
+        dbname: 'exchange_rates',
         host: 'localhost'
       })
       result = db.exec(sql)

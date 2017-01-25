@@ -1,7 +1,7 @@
 require 'pry-byebug'
 require_relative '../db/sql_runner.rb'
 
-class FxRate
+class RateRecord
 
   attr_reader :id, :rate_date, :currency, :rate
 
@@ -14,7 +14,7 @@ class FxRate
 
   def save()
     sql = "
-      INSERT INTO rates (
+      INSERT INTO rate_records (
         rate_date,
         currency,
         rate
@@ -26,33 +26,33 @@ class FxRate
       )
     RETURNING *
     ;"
-    fx_rate = SqlRunner.run(sql).first
-    if fx_rate.is_a?(String)
-      return fx_rate
+    rate_record = SqlRunner.run(sql).first
+    if rate_record.is_a?(String)
+      return rate_record
     else
-      @id = fx_rate['id']
-      return FxRate.new(fx_rate)
+      @id = rate_record['id']
+      return RateRecord.new(rate_record)
     end
   end
 
-  def self.fx_rate(fx_rate_id)
-    fx_rate_id = fx_rate_id.to_i
+  def self.rate_record(rate_record_id)
+    rate_record_id = rate_record_id.to_i
     sql = "
-      SELECT * FROM rates
-      WHERE id = #{fx_rate_id}
+      SELECT * FROM rate_records
+      WHERE id = #{rate_record_id}
     ;"
-    fx_rate = SqlRunner.run(sql)
-    return FxRate.new(fx_rate.first)    
+    rate_record = SqlRunner.run(sql)
+    return RateRecord.new(rate_record.first)    
   end
 
-  def self.fx_rate_by_date_and_currency(date, currency)
+  def self.rate_record_by_date_and_currency(date, currency)
     sql = "
-      SELECT * FROM rates
+      SELECT * FROM rate_records
       WHERE rate_date = '#{date}'
       AND currency = '#{currency}'
     ;"
-    fx_rate = SqlRunner.run(sql)
-    return FxRate.new(fx_rate.first)
+    rate_record = SqlRunner.run(sql)
+    return RateRecord.new(rate_record.first)
   end
 
 end

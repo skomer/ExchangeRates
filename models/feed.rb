@@ -1,6 +1,6 @@
 require 'Nokogiri'
 require 'open-uri'
-require_relative 'fx_rate'
+require_relative 'rate_record'
 
 class Feed
 
@@ -29,7 +29,7 @@ class Feed
     return rates_by_date
   end
 
-  def construct_and_save_fx_rates_objects
+  def construct_and_save_rate_records
     rates_by_date = parse_xml()
     rates_by_date.each do |date, currency_rate|
       currency_rate.each do |currency, rate|
@@ -38,15 +38,15 @@ class Feed
           'currency' => currency,
           'rate' => rate
         }
-        fx_rate = FxRate.new(options)
-        fx_rate.save()
+        rate_record = RateRecord.new(options)
+        rate_record.save()
       end
       euro_options = {
         'rate_date' => date,
         'currency' => "EUR",
         'rate' => 1.000
       }
-      euro_rate = FxRate.new(euro_options)
+      euro_rate = RateRecord.new(euro_options)
       euro_rate.save()
     end
   end

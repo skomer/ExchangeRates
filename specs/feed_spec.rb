@@ -3,7 +3,7 @@ require 'minitest/autorun'
 require 'minitest/pride'
 require 'Nokogiri'
 require_relative '../models/feed.rb'
-require_relative '../models/fx_rate.rb'
+require_relative '../models/rate_record.rb'
 
 class TestFeed < MiniTest::Test
 
@@ -30,15 +30,15 @@ class TestFeed < MiniTest::Test
     assert_equal(1.0715, rates_by_date["2017-01-23"]["USD"].to_f)
   end
 
-  def test_can_send_data_to_fx_rates_object
-    @feed.construct_and_save_fx_rates_objects
-    fx_rate = FxRate.fx_rate_by_date_and_currency("2016-12-27", "MXN")
-    assert_equal(21.5344, fx_rate.rate)
+  def test_can_send_data_to_rate_records_object
+    @feed.construct_and_save_rate_record_objects
+    rate_record = RateRecord.rate_record_by_date_and_currency("2016-12-27", "MXN")
+    assert_equal(21.5344, rate_record.rate)
   end
 
   def test_euro_rate_is_saved
-    @feed.construct_and_save_fx_rates_objects
-    euro_rate = FxRate.fx_rate_by_date_and_currency("2017-01-05", "EUR")
+    @feed.construct_and_save_rate_records
+    euro_rate = RateRecord.rate_record_by_date_and_currency("2017-01-05", "EUR")
     assert_equal(1.000, euro_rate.rate)
   end
 
