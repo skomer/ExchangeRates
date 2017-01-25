@@ -36,6 +36,12 @@ class TestFeed < MiniTest::Test
     assert_equal(21.5344, fx_rate.rate)
   end
 
+  def test_euro_rate_is_saved
+    @feed.construct_and_save_fx_rates_objects
+    euro_rate = FxRate.fx_rate_by_date_and_currency("2017-01-05", "EUR")
+    assert_equal(1.000, euro_rate.rate)
+  end
+
 
 end
 

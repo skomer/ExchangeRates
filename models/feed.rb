@@ -41,6 +41,13 @@ class Feed
         fx_rate = FxRate.new(options)
         fx_rate.save()
       end
+      euro_options = {
+        'rate_date' => date,
+        'currency' => "EUR",
+        'rate' => 1.000
+      }
+      euro_rate = FxRate.new(euro_options)
+      euro_rate.save()
     end
   end
 
