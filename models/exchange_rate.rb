@@ -5,10 +5,10 @@ class ExchangeRate
 
   attr_reader :date_requested, :from_currency, :to_currency
 
-  def initialize(options)
-    @date_requested = options.fetch('date_requested')
-    @from_currency = options.fetch('from_currency')
-    @to_currency = options.fetch('to_currency')
+  def initialize(date_requested, from_currency, to_currency)
+    @date_requested = date_requested
+    @from_currency = from_currency
+    @to_currency = to_currency
   end
 
   
