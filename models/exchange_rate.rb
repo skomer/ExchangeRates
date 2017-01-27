@@ -1,4 +1,5 @@
 require 'date'
+require_relative 'rate_record.rb'
 
 
 class ExchangeRate
@@ -12,6 +13,10 @@ class ExchangeRate
   end
 
   
+  def at(date_requested, from_currency, to_currency)
+    rate_record = RateRecord.rate_record_by_date_and_currency(date_requested, from_currency)
+    return rate_record.rate
+  end
 
 
 
