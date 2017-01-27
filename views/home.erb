@@ -1,14 +1,25 @@
 
-<form action="/" method="GET" id="convert-form">
-  <div id="calendar">
-    <p>Date: <input type="text" id="datepicker" name="date"></p>
-  </div>
-  <div id="amount"><p>Enter an amount: <input type="text" id="amount" name="amount"></p></div>
-  <div id="currencies">
-    <p>select from currency: <select></select></p>
-    <p>select to currency: <select></select></p>
-  </div>
-  <button>Convert</button>
+<form action="/rate_records" method="POST" id="convert-form">
+  <label for="date_requested">Date:</label>
+  <input type="text" id="datepicker" name="date_requested">  
+
+  <label for="amount">Amount:</label>
+  <input type="text" name="amount">
+
+  <label for="from-currency">select from currency</label>
+  <select name="from_currency">
+    <option value="test1">Test1</option>
+    <option value="test2">Test2</option>
+  </select>
+
+  <label for="to-currency">select to currency</label>
+  <select name="to_currency">
+    <option value="test1">Test1</option>
+    <option value="test2">Test2</option>
+  </select>
+
+  <input type="submit" value="Convert">
 </form>
+
 
 <div id="result"><p>Result displays here</p></div>

@@ -3,26 +3,19 @@
   <head>
     <title>Exhcange Rates</title>
     <link rel="stylesheet" type="text/css" href="../style.css">
-    
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <!-- <link rel="stylesheet" href="/resources/demos/style.css"> -->
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    
-
-
-
-
-    <!-- <script src="jquery-3.1.1.min.js"></script> -->
-    <script src="script.js"></script>
+    <script type="text/javascript" src="script.js"></script>
   </head>
+  
   <body>
     <header id="nav-bar">
       <h1>Exchange Rates</h1>
       <div class="grid">
         <div class="grid-row grid-row-lg">
           <div class="cell"><a href="/">Home</a></div>
-          <form action="/rate_records" method="POST">
+          <form action="/feed" method="POST">
             <button>Fetch Data</button>
           </form>
         </div>
