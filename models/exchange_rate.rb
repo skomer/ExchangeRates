@@ -11,35 +11,9 @@ class ExchangeRate
   end
 
   def self.calculate_from_to_currency_rate(from_currency_rate, to_currency_rate)
-
-
+    from_to_currency_rate = to_currency_rate / from_currency_rate
+    return from_to_currency_rate.round(5)
   end
-
-  # def self.convert(options)
-  #   from_currency_rate_against_euro = at(
-  #     options.fetch("date_requested"),
-  #     options.fetch("from_currency"),
-  #     options.fetch("to_currency")
-  #   )
-
-  #   to_currency_rate_against_euro = at(
-  #     options.fetch("date_requested"),
-  #     options.fetch("from_currency"),
-  #     options.fetch("to_currency")
-  #   )
-
-
-
-  #   converted_amount = (
-  #     (options.fetch("amount_to_convert") / )
-
-
-
-  #   )
-
-
-  # end
-
 
 
   # ExchangeRate.at(Date.today,'GBP','USD')
