@@ -22,6 +22,10 @@ class TestExchangeRate < MiniTest::Test
     assert_equal(25.27500, gbp_to_mxn_rate)
   end
 
+  def test_exchange_rate_can_return_rate_given_arguments
+    chf_to_czk_rate = ExchangeRate.at("2017-01-27", "CHF", "CZK")
+    assert_equal(25.27926, chf_to_czk_rate)
+  end
 
 
 end
