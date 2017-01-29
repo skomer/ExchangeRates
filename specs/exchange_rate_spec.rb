@@ -32,7 +32,8 @@ class TestExchangeRate < MiniTest::Test
     from_currency = "RON"
     to_currency = "JPY"
     from_currency_amount = 1000
-    assert.equal(27248.08957, ExchangeRate.convert())
+    conversion = ExchangeRate.convert(date_requested, from_currency, to_currency, from_currency_amount)
+    assert.equal(27248.08957, conversion)
   end
 
 
