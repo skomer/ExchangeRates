@@ -35,7 +35,7 @@ class TestRateRecord < MiniTest::Test
       'currency' => "BBB",
       'rate' => 0.001
     })
-    duplicate_rate_2 = Rate_Record.new({
+    duplicate_rate_2 = RateRecord.new({
       'rate_date' => "1999-12-31",
       'currency' => "BBB",
       'rate' => 0.001
