@@ -1,25 +1,26 @@
 
 <div><a href="/exchange_rate/new">New conversion</a></div>
 
-<h4>rate_records/create</h4>
 
 <div id="results">
   <table>
     <tr>
-      <th>Base currency</th>
-      <th></th>
-      <th>Counter currency</th>
+      <th>Base Currency</th>
+      <th>    </th>
+      <th>Counter Currency</th>
+      <th>Exchange Rate</th>
     </tr>
     <tr>
       <td><%= @from_currency %></td>
-      <td></td>
+      <td>    </td>
       <td><%= @to_currency %></td>
+      <td rowspan="2"><%= @exchange_rate.round(5) %></td>
     </tr>
     <tr>
       <td><%= @amount %></td>
-      <td></td>
+      <td>    </td>
       <td><%= @converted_amount %></td>
     </tr>
-    
+
   </table>
 </div>

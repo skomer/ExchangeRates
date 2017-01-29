@@ -1,7 +1,5 @@
-# require_relative './models/feed.rb'
 require_relative './models/rate_record.rb'
 require_relative './models/exchange_rate.rb'
-# require 'pry-byebug'
 
 
 # new
