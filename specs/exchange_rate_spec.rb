@@ -27,6 +27,14 @@ class TestExchangeRate < MiniTest::Test
     assert_equal(25.27926, chf_to_czk_rate)
   end
 
+  def test_exchange_rate_can_convert_currency
+    date_requested = "2017-01-09"
+    from_currency = "RON"
+    to_currency = "JPY"
+    from_currency_amount = 1000
+    assert.equal(27248.08957, ExchangeRate.convert())
+  end
+
 
 end
 

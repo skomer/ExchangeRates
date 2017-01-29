@@ -55,6 +55,17 @@ class RateRecord
     return RateRecord.new(rate_record.first)
   end
 
+  def self.get_currencies
+    sql = "
+      SELECT DISTINCT currency FROM rate_records
+    ;"
+    pg_currencies = SqlRunner.run(sql)
+    currencies = []
+    pg_currencies.each {|currency| currencies.push(currency["currency"])}
+    return currencies
+  end
+
+
 end
 
 

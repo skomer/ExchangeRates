@@ -1,25 +1,6 @@
 
-<form action="/rate_records" method="POST" id="convert-form">
-  <label for="date_requested">Date:</label>
-  <input type="text" id="datepicker" name="date_requested">  
+<h3>No data saved; please 'Fetch Data' to continue</h3>
 
-  <label for="amount">Amount:</label>
-  <input type="text" name="amount">
-
-  <label for="from-currency">select from currency</label>
-  <select name="from_currency">
-    <option value="test1">Test1</option>
-    <option value="test2">Test2</option>
-  </select>
-
-  <label for="to-currency">select to currency</label>
-  <select name="to_currency">
-    <option value="test1">Test1</option>
-    <option value="test2">Test2</option>
-  </select>
-
-  <input type="submit" value="Convert">
+<form action="/feed" method="POST">
+  <button>Fetch Data</button>
 </form>
-
-
-<div id="result"><p>Result displays here</p></div>

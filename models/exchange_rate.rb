@@ -6,10 +6,8 @@ require_relative 'rate_record.rb'
 class ExchangeRate
   
   def self.get_rate(date_requested, from_currency, to_currency)
-    binding.pry
     from_currency_rate_record = RateRecord.rate_record_by_date_and_currency(date_requested, from_currency)
     to_currency_rate_record = RateRecord.rate_record_by_date_and_currency(date_requested, to_currency)
-    binding.pry
     return [from_currency_rate_record.rate, to_currency_rate_record.rate]
   end
 

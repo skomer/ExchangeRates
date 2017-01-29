@@ -3,10 +3,10 @@ require_relative './models/feed.rb'
 require_relative './models/exchange_rate.rb'
 
 # index
-get '/rate_records' do
-  # @rate_records = RateRecord.all()
-  erb(:'index')
-end
+# get '/rate_records' do
+#   # @rate_records = RateRecord.all()
+#   erb(:'index')
+# end
 
 # new
 get '/rate_records/new' do
@@ -16,7 +16,7 @@ end
 
 # create
 post '/rate_records' do
-  @exchange_rate = ExchangeRate.new(params)
+  @exchange_rate = ExchangeRate.at(params["date_requested"], params["from_currency"], params["to_currency"])
   erb(:'create')
 end
 
