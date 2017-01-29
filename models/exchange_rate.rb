@@ -13,7 +13,6 @@ class ExchangeRate
 
   def self.calculate_from_to_currency_rate(from_currency_rate, to_currency_rate)
     from_to_currency_rate = to_currency_rate / from_currency_rate
-    # binding.pry
     return from_to_currency_rate
   end
 
@@ -26,7 +25,8 @@ class ExchangeRate
 
   def self.convert(date_requested, from_currency, to_currency, amount)
     from_to_currency_rate = at(date_requested, from_currency, to_currency)
-    conversion = amount * from_to_currency_rate
+    conversion = amount.to_f * from_to_currency_rate
+    binding.pry
     return conversion.round(5)
   end
 

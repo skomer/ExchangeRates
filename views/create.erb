@@ -3,9 +3,23 @@
 
 <h4>rate_records/create</h4>
 
-<p>
-  Just for larks: rate_record by date and currency (2017-01-24, MXN):<br />
-  <% rate_record = RateRecord.rate_record_by_date_and_currency("2017-01-24", "MXN") %>
-  <%= rate_record.rate %>
-
-</p>
+<div id="results">
+  <table>
+    <tr>
+      <th>Base currency</th>
+      <th></th>
+      <th>Counter currency</th>
+    </tr>
+    <tr>
+      <td><%= @from_currency %></td>
+      <td></td>
+      <td><%= @to_currency %></td>
+    </tr>
+    <tr>
+      <td><%= @amount %></td>
+      <td></td>
+      <td><%= @converted_amount %></td>
+    </tr>
+    
+  </table>
+</div>
