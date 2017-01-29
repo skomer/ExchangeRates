@@ -21,7 +21,7 @@ post '/rate_records' do
 end
 
 # show
-get '/rate_records/:id' do
-  @rate_record = RateRecord.rate_record(params[:id])
-  erb(:'show')
-end
+# get '/rate_records/:id' do
+#   @rate_record = RateRecord.rate_record(params[:id])
+#   erb(:'show')
+# end
