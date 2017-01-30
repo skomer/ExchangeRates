@@ -4,23 +4,38 @@
 
 <div id="results">
   <table>
+
     <tr>
-      <th>Base Currency</th>
-      <th>    </th>
-      <th>Counter Currency</th>
-      <th>Exchange Rate</th>
+      <td></td>
+      <td></td>
+      <td class="label">Amount</td>
     </tr>
+
     <tr>
-      <td><%= @from_currency %></td>
-      <td>    </td>
-      <td><%= @to_currency %></td>
-      <td rowspan="2"><%= @exchange_rate.round(5) %></td>
-    </tr>
-    <tr>
+      <td class="label">Base Currency</td>
+      <td><%= @from_currency %></td>  
       <td><%= @amount %></td>
-      <td>    </td>
+    </tr>
+
+    <tr>
+      <td class="label">Counter Currency</td>
+      <td><%= @to_currency %></td>
       <td><%= @converted_amount %></td>
+    </tr>
+
+    <tr>
+      <td class="label">Exchange Rate</td>
+      <td><%= @exchange_rate.round(5) %></td>
+    </tr>
+
+    <tr>
+      <td class="label">Date Requested</td>
+      <td><%= @date_requested %></td>
     </tr>
 
   </table>
 </div>
+
+
+
+

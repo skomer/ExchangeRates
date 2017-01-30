@@ -2,6 +2,46 @@ body {
   font-family: sans-serif;
 }
 
-a {
+h1, h2, h3 {
+  text-align: center;
+  color: navy;
+}
+
+a, a:visited {
+  color: limegreen;
   text-decoration: none;
 }
+
+td {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.label {
+  font-weight: bold;
+}
+
+.button {
+  margin: auto;
+  background-color: limegreen;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+}
+
+#main-div, #nav-bar {
+  display: block;
+  margin: auto;
+  max-width: 700px;
+}
+
+
+
+

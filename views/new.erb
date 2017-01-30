@@ -1,27 +1,45 @@
 
 
 <form action="/exchange_rates" method="POST" id="convert-form">
-  <label for="date_requested">Date:</label>
-  <input type="text" id="datepicker" name="date_requested"><br>
 
-  <label for="amount">Amount:</label>
-  <input type="text" name="amount"><br>
+  <table>
 
-  <label for="from-currency">select from currency</label>
-  <select name="from_currency">
-    <option value="">Select...</option>
-    <% @currencies.each do |currency| %>
-      <option value="<%= currency %>"><%= currency %></option>
-    <% end %>
-  </select><br>
+    <tr>
+      <td><label for="date_requested">Select a date:</label></td>
+      <td><input type="text" id="datepicker" name="date_requested"></td>
+    </tr>
+    
+    <tr>
+      <td><label for="from-currency">Select base currency:</label></td>
+      <td>
+        <select name="from_currency">
+          <option value="">Select...</option>
+          <% @currencies.each do |currency| %>
+            <option value="<%= currency %>"><%= currency %></option>
+          <% end %>
+        </select>
+      </td>
+    </tr>
 
-  <label for="to-currency">select to currency</label>
-  <select name="to_currency">
-    <option value="">Select...</option>
-    <% @currencies.each do |currency| %>
-      <option value="<%= currency %>"><%= currency %></option>
-    <% end %>
-  </select><br>
+    <tr>
+      <td><label for="to-currency">Select counter currency</label></td>
+      <td>
+        <select name="to_currency">
+          <option value="">Select...</option>
+          <% @currencies.each do |currency| %>
+            <option value="<%= currency %>"><%= currency %></option>
+          <% end %>
+        </select>
+      </td>
+    </tr>
 
-  <input type="submit" value="Convert">
+    <tr>
+      <td><label for="amount">Enter the amount to convert:</label></td>
+      <td><input type="text" name="amount"></td>
+    </tr>
+
+  </table>
+
+  <br>
+  <input class="button" type="submit" value="Convert">
 </form>
