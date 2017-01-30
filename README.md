@@ -22,8 +22,7 @@ To install the gems required run these commands in the command line:
 
 ```gem install open-uri```
 
-Then you'll need to create a database for the app to use.
-
+## Creating the database
 In the command line, navigate to the app's top level folder and run this command to create the postgres database:
 ```createdb exchange_rates```
 
