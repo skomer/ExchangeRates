@@ -20,6 +20,9 @@ To install the gems required:
 
 ```gem install nokogiri```
 
+```gem install pry-byebug```
+
+
 ## Creating the database
 Make sure your Postgres server is running. In the command line, navigate to the app's top level folder and run this command to create the postgres database:
 
